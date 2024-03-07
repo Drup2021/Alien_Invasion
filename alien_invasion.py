@@ -127,6 +127,8 @@ class AlienInvasion :
                 #even == 0 works coordinate system has (0,0)at the top left corner
                 self.bullets.remove(bullet)
 
+        # check for any bullets that hit alien, if so, then get rid of the bullet and the alien
+        collisions = pygame.sprite.groupcollide(self.bullets,self.aliens,True,True)
 
     def _update_screen(self):
         """Update images on the screen and flip to new screen"""
